@@ -371,7 +371,7 @@
                         <select id="posNat1" onchange="update()">
                             <option value="well-rounded">Well-rounded</option>
                             <option value="strong">Strong</option>
-                            <option value="resilient ">Resilient </option>
+                            <option value="resilient">Resilient</option>
                             <option value="adept">Adept</option>
                             <option value="tenacious">Tenacious</option>
 							<option value="swift">Swift</option>
@@ -454,6 +454,8 @@
                         <input class="moveslbl" id="moveOneMR1" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveOneCrit1" onchange="update()">
                         <label class="radiolbl critlbl" for="moveOneCrit1">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateOne1" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateOne1">Ult</label>
                         <select class="move-hits" id="moveOneHits1" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -488,6 +490,8 @@
                         <input class="moveslbl" id="moveTwoMR1" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveTwoCrit1" onchange="update()">
                         <label class="radiolbl critlbl" for="moveTwoCrit1">Crit</label>
+												<input type="checkbox" class="hiddenToUser" id="ultimateTwo1" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateTwo1">Ult</label>
                         <select class="move-hits" id="moveTwoHits1" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -522,6 +526,8 @@
                         <input class="moveslbl" id="moveThreeMR1" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveThreeCrit1" onchange="update()">
                         <label class="radiolbl critlbl" for="moveThreeCrit1">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateThree1" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateThree1">Ult</label>
                         <select class="move-hits" id="moveThreeHits1" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -556,6 +562,8 @@
                         <input class="moveslbl" id="moveFourMR1" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveFourCrit1" onchange="update()">
                         <label class="radiolbl critlbl" for="moveFourCrit1">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateFour1" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateFour1">Ult</label>
                         <select class="move-hits" id="moveFourHits1" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -764,27 +772,17 @@
                         </div>
                     </div>
 
-                    <div>
-                        <div class="left">
-                            <input type="checkbox" class="hiddenToUser" id="buzzolen1" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" style="display: none;" for="buzzolen1" title="Was this side stung by Buzzolen?">Stung by Buzzolen</label>
-                        </div>
-
-                        <div class="right">
-                            <input type="checkbox" class="hiddenToUser" id="buzzolen2" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" style="display: none;" for="buzzolen2" title="Was this side stung by Buzzolen?">Stung by Buzzolen</label>
-                        </div>
-                    </div>
+                    
 
                     <div>
                         <div class="left">
                             <input type="checkbox" class="hiddenToUser" id="hellstorm1" onchange="update()">
-                            <label class="radiolbl fieldlbl icetrap" style="display: none;" for="hellstorm1" title="Is this side affected by Hellstorm?">Hellstorm</label>
+                            <label class="radiolbl fieldlbl icetrap" for="hellstorm1" title="Is this side affected by Plague?">Plague</label>
                         </div>
 
                         <div class="right">
                             <input type="checkbox" class="hiddenToUser" id="hellstorm2" onchange="update()">
-                            <label class="radiolbl fieldlbl icetrap" style="display: none;" for="hellstorm2" title="Is this side affected by Hellstorm?">Hellstorm</label>
+                            <label class="radiolbl fieldlbl icetrap" for="hellstorm2" title="Is this side affected by Plague?">Plague</label>
                         </div>
                     </div>
 
@@ -837,12 +835,12 @@
                     <div>
                         <div class="left">
                             <input type="checkbox" class="hiddenToUser" id="guardian1" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" for="guardian1">Honor Guard</label>
+                            <label class="radiolbl fieldlbl icetrap" for="guardian1">Honor Guard</label>
                         </div>
 
                         <div class="right">
                             <input type="checkbox" class="hiddenToUser" id="guardian2" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" for="guardian2">Honor Guard</label>
+                            <label class="radiolbl fieldlbl icetrap" for="guardian2">Honor Guard</label>
                         </div>
                     </div>
 					<div>
@@ -850,20 +848,32 @@
 					
                         <div class="left">
                             <input type="checkbox" class="hiddenToUser" id="altruistic1" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" for="altruistic1">Altruistic</label>
+                            <label class="radiolbl fieldlbl icetrap" for="altruistic1">Altruistic</label>
                         </div>
 
                         <div class="right">
                             <input type="checkbox" class="hiddenToUser" id="altruistic2" onchange="update()">
-                            <label class="radiolbl fieldlbl entered" for="altruistic2">Altruistic</label>
+                            <label class="radiolbl fieldlbl icetrap" for="altruistic2">Altruistic</label>
                         </div>
                     </div>
+					
+					<div>
+                        <div class="left">
+                            <input type="checkbox" class="hiddenToUser" id="protected1" onchange="update()">
+                            <label class="radiolbl fieldlbl icetrap" for="protected1">Protected</label>
+                        </div>
+
+                        <div class="right">
+                            <input type="checkbox" class="hiddenToUser" id="protected2" onchange="update()">
+                            <label class="radiolbl fieldlbl icetrap" for="protected2">Protected</label>
+                        </div>
+                    </div>					
 					
                 </div>
 
                 <hr>
                 <div class="bott">
-                    <a href="https://saucesoy.github.io/Set-Maker">You can make sets here</a>
+                    <a href="https://elephages.github.io/EleonSetMaker/">You can make sets here</a>
                 </div>
                 <div class="bott">
                     <textarea id="import" placeholder="Enter set data here" onchange="importSets()"></textarea>
@@ -1122,7 +1132,7 @@
                         <select id="posNat2" onchange="update()">
                             <option value="well-rounded">Well-rounded</option>
                             <option value="strong">Strong</option>
-                            <option value="resilient ">Resilient </option>
+                            <option value="resilient">Resilient</option>
                             <option value="adept">Adept</option>
                             <option value="tenacious">Tenacious</option>
 							<option value="swift">Swift</option>
@@ -1206,6 +1216,8 @@
                         <input class="moveslbl" id="moveOneMR2" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveOneCrit2" onchange="update()">
                         <label class="radiolbl critlbl" for="moveOneCrit2">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateOne2" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateOne2">Ult</label>
                         <select class="move-hits" id="moveOneHits2" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -1240,6 +1252,8 @@
                         <input class="moveslbl" id="moveTwoMR2" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveTwoCrit2" onchange="update()">
                         <label class="radiolbl critlbl" for="moveTwoCrit2">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateTwo2" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateTwo2">Ult</label>
                         <select class="move-hits" id="moveTwoHits2" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -1274,6 +1288,8 @@
                         <input class="moveslbl" id="moveThreeMR2" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveThreeCrit2" onchange="update()">
                         <label class="radiolbl critlbl" for="moveThreeCrit2">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateThree2" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateThree2">Ult</label>
                         <select class="move-hits" id="moveThreeHits2" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -1308,6 +1324,8 @@
                         <input class="moveslbl" id="moveFourMR2" readonly>
                         <input type="checkbox" class="hiddenToUser" id="moveFourCrit2" onchange="update()">
                         <label class="radiolbl critlbl" for="moveFourCrit2">Crit</label>
+						<input type="checkbox" class="hiddenToUser" id="ultimateFour2" onchange="update()">
+						<label class="radiolbl critlbl" for="ultimateFour2">Ult</label>
                         <select class="move-hits" id="moveFourHits2" style="display: none;" onchange="update()">
                             <option>2 hits</option>
                             <option>3 hits</option>
@@ -1348,7 +1366,7 @@
         <input type="checkbox" class="hiddenToUser" id="darkMode" onchange="toggleDarkMode()">
         <label class="radiolbl fieldlbl entered" for="darkMode">Dark Mode</label>
         <br>
-        Made By: Neo and Phantom <br>Contributors: <br>- i_eaturface <br>- Eleons PvP Hub <br><br><a href="https://github.com/SauceSoy/Damage-Calculator">GitHub Repo</a>
+
     </div>
 </body>
 <script>
