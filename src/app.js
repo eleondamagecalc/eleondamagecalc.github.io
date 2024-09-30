@@ -453,10 +453,6 @@ function toggleDarkMode() {
     loadSets();
     update();
 	
-	for (let i = 0; i < builtInSets.length; i++) {
-		addSet(builtInSets[i], true);
-	}
-
 
     currentHP1.addEventListener("keyup", updatePercent);
     currentHP2.addEventListener("keyup", updatePercent);
@@ -581,6 +577,8 @@ function update(updatePower = false, updateBaseStats = false) {
     let firstLoom = loomians[pokeDropdown1.value.toLowerCase()];
     let secondLoom = loomians[pokeDropdown2.value.toLowerCase()];
 
+    document.getElementById("loom1Info").innerHTML = firstLoom.name + "'s moves (select one for more info)";
+    document.getElementById("loom2Info").innerHTML = secondLoom.name + "'s moves (select one for more info)";
 
     if (updateBaseStats) loadBaseStats();
     loadStats();
@@ -900,23 +898,6 @@ function loadSets(onlyFirst = true, onlySecond = true) {
     update(undefined, false);
 }
 
-function addSet(set, builtIn = false) {
-    let optG1 = findOptgroup(pokeDropdown1, set.name);
-    let optG2 = findOptgroup(pokeDropdown2, set.name);
-    let opt1 = new Option(set.name + " (" + set.setName + ")", set.name);
-    let opt2 = new Option(set.name + " (" + set.setName + ")", set.name);
-    let tempSet = set;
-
-    if (tempSet.level == undefined) {
-        tempSet.level = 100;
-    }
-    if (!builtIn) sets.push(tempSet);
-    opt1.set = tempSet;
-    opt2.set = tempSet;
-    optG1.appendChild(opt1);
-    optG2.appendChild(opt2);
-}
-
 function deleteSet(second = false) {
     if (!second) {
         let set1 = pokeDropdown1.options[pokeDropdown1.selectedIndex].set;
@@ -960,7 +941,7 @@ function makeBlankSet(loomian) {
         posNature: "well-rounded",
         ability: "None",
         item: "None",
-        level: 50
+        level: 100
     }
     return set;
 }
@@ -1062,6 +1043,123 @@ function loadBaseStats(side) {
     }
 }
 
+function loadMoves(updatePower = false) {
+    let firstLoom = loomians[pokeDropdown1.value.toLowerCase()];
+    let secondLoom = loomians[pokeDropdown2.value.toLowerCase()];
+    let firstSoul = firstLoom.soulMove;
+    let secondSoul = secondLoom.soulMove;
+
+    let moveOne1 = findMove(moveOneDropdown1.value);
+    let moveTwo1 = findMove(moveTwoDropdown1.value);
+    let moveThree1 = findMove(moveThreeDropdown1.value);
+    let moveFour1 = findMove(moveFourDropdown1.value);
+    let moveOne2 = findMove(moveOneDropdown2.value);
+    let moveTwo2 = findMove(moveTwoDropdown2.value);
+    let moveThree2 = findMove(moveThreeDropdown2.value);
+    let moveFour2 = findMove(moveFourDropdown2.value);
+    
+
+    if (firstSoul) {
+        soulMove1 = findMove(firstSoul);
+        soulMoveLbl1.style.display = "inline-block";
+        soulMoveDmg1.style.display = "inline";
+    } else {
+        soulMove1 = findMove("(No Move)");
+        soulMoveLbl1.style.display = "none";
+        soulMoveDmg1.style.display = "none";
+    }
+    if (secondSoul) {
+        soulMove2 = findMove(secondSoul);
+        soulMoveLbl2.style.display = "inline-block";
+        soulMoveDmg2.style.display = "inline";
+    } else {
+        soulMove2 = findMove("(No Move)");
+        soulMoveLbl2.style.display = "none";
+        soulMoveDmg2.style.display = "none";
+    }
+
+    if (updatePower) {
+        moveOnePower1.value = moveOne1.power;
+        moveTwoPower1.value = moveTwo1.power;
+        moveThreePower1.value = moveThree1.power;
+        moveFourPower1.value = moveFour1.power;
+        moveOnePower2.value = moveOne2.power;
+        moveTwoPower2.value = moveTwo2.power;
+        moveThreePower2.value = moveThree2.power;
+        moveFourPower2.value = moveFour2.power;
+        soulMovePower1 = soulMove1.power;
+        soulMovePower2 = soulMove2.power;
+    }
+
+    moveOneType1.value = moveOne1.type;
+    moveTwoType1.value = moveTwo1.type;
+    moveThreeType1.value = moveThree1.type;
+    moveFourType1.value = moveFour1.type;
+    moveOneType2.value = moveOne2.type;
+    moveTwoType2.value = moveTwo2.type;
+    moveThreeType2.value = moveThree2.type;
+    moveFourType2.value = moveFour2.type;
+    soulMoveType1 = soulMove1.type;
+    soulMoveType2 = soulMove2.type;
+
+
+    moveOneMR1.value = moveOne1.mr;
+    moveTwoMR1.value = moveTwo1.mr;
+    moveThreeMR1.value = moveThree1.mr;
+    moveFourMR1.value = moveFour1.mr;
+    moveOneMR2.value = moveOne2.mr;
+    moveTwoMR2.value = moveTwo2.mr;
+    moveThreeMR2.value = moveThree2.mr;
+    moveFourMR2.value = moveFour2.mr;
+    soulMoveMR1 = soulMove1.mr;
+    soulMoveMR2 = soulMove2.mr;
+
+	if (ultimateOne1.checked) {
+		if (firstLoom.ult && moveOne1.name == firstLoom.ult[0]) moveOneLbl1.innerHTML = firstLoom.ult[1];
+		else moveOneLbl1.innerHTML = types[moveOne1.type.toLowerCase()].ultName;
+	} else moveOneLbl1.innerHTML = moveOne1.name;
+    if (ultimateTwo1.checked) {
+		if (firstLoom.ult && moveTwo1.name == firstLoom.ult[0]) moveTwoLbl1.innerHTML = firstLoom.ult[1];
+		else moveTwoLbl1.innerHTML = types[moveTwo1.type.toLowerCase()].ultName;
+	} else moveTwoLbl1.innerHTML = moveTwo1.name;
+    if (ultimateThree1.checked) {
+		if (firstLoom.ult && moveThree1.name == firstLoom.ult[0]) moveThreeLbl1.innerHTML = firstLoom.ult[1];
+		else moveThreeLbl1.innerHTML = types[moveThree1.type.toLowerCase()].ultName;
+	} else moveThreeLbl1.innerHTML = moveThree1.name;
+    if (ultimateFour1.checked) {
+		if (firstLoom.ult && moveFour1.name == firstLoom.ult[0]) moveFourLbl1.innerHTML = firstLoom.ult[1];
+		else moveFourLbl1.innerHTML = types[moveFour1.type.toLowerCase()].ultName;
+	} else moveFourLbl1.innerHTML = moveFour1.name;
+    if (ultimateOne2.checked) {
+		if (secondLoom.ult && moveOne2.name == secondLoom.ult[0]) moveOneLbl2.innerHTML = secondLoom.ult[1];
+		else moveOneLbl2.innerHTML = types[moveOne2.type.toLowerCase()].ultName;
+	} else moveOneLbl2.innerHTML = moveOne2.name;
+    if (ultimateTwo2.checked)  {
+		if (secondLoom.ult && moveTwo2.name == secondLoom.ult[0]) moveTwoLbl2.innerHTML = secondLoom.ult[1];
+		else moveTwoLbl2.innerHTML = types[moveTwo2.type.toLowerCase()].ultName;
+	} else moveTwoLbl2.innerHTML = moveTwo2.name;
+    if (ultimateThree2.checked) {
+		if (secondLoom.ult && moveThree2.name == secondLoom.ult[0]) moveThreeLbl2.innerHTML = secondLoom.ult[1];
+		else moveThreeLbl2.innerHTML = types[moveThree2.type.toLowerCase()].ultName;
+	} else moveThreeLbl2.innerHTML = moveThree2.name;
+    if (ultimateFour2.checked)  {
+		if (secondLoom.ult && moveFour2.name == secondLoom.ult[0]) moveFourLbl2.innerHTML = secondLoom.ult[1];
+		else moveFourLbl2.innerHTML = types[moveFour2.type.toLowerCase()].ultName;
+	} else moveFourLbl2.innerHTML = moveFour2.name;
+    soulMoveLbl1.innerHTML = soulMove1.name;
+    soulMoveLbl2.innerHTML = soulMove2.name;
+
+	moveOne11 = moveOne1.name;
+	moveTwo11 = moveTwo1.name;
+	moveThree11 = moveThree1.name;
+	moveFour11 = moveFour1.name;
+	moveOne22 = moveOne2.name;
+	moveTwo22 = moveTwo2.name;
+	moveThree22 = moveThree2.name;
+	moveFour22 = moveFour2.name;
+
+    calculateDamage(moveOne1, moveTwo1, moveThree1, moveFour1, moveOne2, moveTwo2, moveThree2, moveFour2, soulMove1, soulMove2);
+}
 
 function loadStats() {
     let firstLoom = loomians[pokeDropdown1.value.toLowerCase()];
@@ -3006,6 +3104,11 @@ if (itemB == "Crystal Medallion") {
         multi *= 0;
         stuffUsed.ability2 = ability2;
     }
+	
+	else if (isStab(types1, { type: tempType }) || ability1 == "Adaptable") {
+        multi *= 1.5;
+        if (ability1 == "Adaptable") stuffUsed.ability1 += ability1;
+    }    
 	
 	
 	if (ability2 == "Dirty Fighter" && (move.pivot || (ability1 == "Foresight" && tempType == "Mind" && stats1.hpPercent > 49) || (ability1 == "Wildfire" && tempType == "Fire" && stats1.hpPercent > 49))) {

@@ -2196,7 +2196,26 @@ var loomians = {
             speed: 70,
         }
     },
-	
+	 
+	 supaltnum: {
+        name: "Supaltnum",
+        number: 123,
+        types: ["Soul"],
+        abilities: ["Captivating"],
+	    sAbility: ["Unnerving"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 57,
+            attack: 36,
+            defense: 84,
+            attackR: 95,
+            defenseR: 80,
+            speed: 40,
+        }
+    },
+	 
 	mawsudora: {
         name: "Mawsudora",
         number: 124,
@@ -2446,6 +2465,263 @@ var loomians = {
             speed: 35,
         }
     },
+	
+	lavenlas : {
+        name: "Lavenlas",
+        number: 136,
+        types: ["Soul", "Pyro"],
+        abilities: ["Recompose"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 110,
+            attack: 100,
+            defense: 100,
+            attackR: 100,
+            defenseR: 100,
+            speed: 100,
+        }
+    },
+	
+	
+	kladd : {
+        name: "Kladd",
+        number: 137,
+        types: ["Bug", "Pyro"],
+        abilities: ["Incendiary"],
+		sAbility: ["Ashfall"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 49,
+            attack: 31,
+            defense: 38,
+            attackR: 63,
+            defenseR: 50,
+            speed: 29,
+        }
+    },
+	
+	arthropot : {
+        name: "Arthropot",
+        number: 138,
+        types: ["Bug", "Pyro"],
+        abilities: ["Blistering"],
+		sAbility: ["Ashfall"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 55,
+            attack: 41,
+            defense: 36,
+            attackR: 85,
+            defenseR: 63,
+            speed: 80,
+        }
+    },
+	
+	caudrou : {
+        name: "Caudrou",
+        number: 139,
+        types: ["Bug", "Pyro"],
+        abilities: ["Blistering"],
+		sAbility: ["Ashfall"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 88,
+            attack: 62,
+            defense: 65,
+            attackR: 130,
+            defenseR: 108,
+            speed: 77,
+        }
+    },
+	
+	charcheval : {
+        name: "Charcheval",
+        number: 140,
+        types: ["Pyro"],
+        abilities: ["Incendiary"],
+		sAbility: ["Breakneck"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 80,
+            attack: 55,
+            defense: 70,
+            attackR: 55,
+            defenseR: 70,
+            speed: 60,
+        }
+    },
+	
+	
+	carcinatus : {
+        name: "Carcinatus",
+        number: 141,
+        types: ["Soul", "Pyro"],
+        abilities: ["Incendiary"],
+		sAbility: ["Breakneck"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 60,
+            attack: 122,
+            defense: 80,
+            attackR: 66,
+            defenseR: 60,
+            speed: 112,
+        }
+    },
+	
+	golite : {
+        name: "Golite",
+        number: 142,
+        types: ["Metal"],
+        abilities: ["Enlighten"],
+		sAbility: ["Adaptable"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 65,
+            attack: 34,
+            defense: 60,
+            attackR: 60,
+            defenseR: 55,
+            speed: 50,
+        }
+    },
+	
+	slowlite : {
+        name: "Slowlite",
+        number: 143,
+        types: ["Metal"],
+        abilities: ["Enlighten"],
+		sAbility: ["Adaptable"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 70,
+            attack: 56,
+            defense: 80,
+            attackR: 79,
+            defenseR: 60,
+            speed: 55,
+        }
+    },
+	
+	ceaselite : {
+        name: "Ceaselite",
+        number: 144,
+        types: ["Metal"],
+        abilities: ["Enlighten"],
+		sAbility: ["Adaptable"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 75,
+            attack: 85,
+            defense: 71,
+            attackR: 112,
+            defenseR: 67,
+            speed: 110,
+        }
+    },
+	
+	
+	roozap : {
+        name: "Roozap",
+        number: 145,
+        types: ["Electric", "Martial"],
+        abilities: ["Extremophile"],
+		sAbility: ["Slugger"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 68,
+            attack: 135,
+            defense: 60,
+            attackR: 52,
+            defenseR: 55,
+            speed: 100,
+        }
+    },
+	
+	
+	oxiruff : {
+        name: "Oxiruff",
+        number: 146,
+        types: ["Geo",],
+        abilities: ["Unflappable"],
+		sAbility: ["Geospeed"],
+        finalEvo: false,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 45,
+            attack: 60,
+            defense: 50,
+            attackR: 45,
+            defenseR: 45,
+            speed: 65,
+        }
+    },
+	
+	oxidachs : {
+        name: "Oxidachs",
+        number: 146,
+        types: ["Geo",],
+        abilities: ["Unflappable"],
+		sAbility: ["Geospeed"],
+        finalEvo: true,
+        weight: 39,
+        height: 59,
+        baseStats: {
+            hp: 70,
+            attack: 100,
+            defense: 70,
+            attackR: 60,
+            defenseR: 70,
+            speed: 100,
+        }
+    },
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 };
 	
 	
@@ -5546,7 +5822,7 @@ var types = {
 };
 
 var abilities = [
-    "Abrasive", "Agile", "Altruistic", "Appeal", "Apathy", "Ashfall", "Prioritize", "Airborne", "Blood Drinker", "Last Stand", "Oblivious", "Snatcher", "Sweet Dreams",
+    "Abrasive","Adaptable", "Agile", "Altruistic", "Appeal", "Apathy", "Ashfall", "Prioritize", "Airborne", "Blood Drinker", "Last Stand", "Oblivious", "Snatcher", "Sweet Dreams",
 	"Ballistic", "Brightside", "Breakneck", "Captivating", "Cheerful", "Chunky", "Operating Drive", "Cacophony", "Blistering", "Observant", "Syncopate", "Tender", "Unflappable",
 	"Cleaner", "Crystal Clear", "Detox", "Dirty Fighter", "Emergency Rations", "Foresight", "Aromatic", "Firepower", "High Velocity", "Readjust", "Tread Lightly", "Ricochet",
 	"Empathy", "Enlighten", "Evaporative", "Floromancy", "Flowerfall", "Godspeed", "Triple Threat", "Extremophile", "Lead Foot", "Quick Wit", "Spurred Action",
