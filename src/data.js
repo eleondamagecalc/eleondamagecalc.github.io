@@ -3708,6 +3708,19 @@ var moves = {
 		
 	},
 	
+	steamnlast:  {
+        name:  "Steam Blast",
+        power:  65,
+        accuracy:  95,
+        type:  "Hydro",
+        mr:  "Magic",
+        mr1:  "Ranged Attack",
+        mr2:  "Ranged Defense",
+		bomb:  true,
+		secondaryEffect:  true,
+		
+	},
+	
 	spiralDrain:  {
         name:  "Spiral Drain",
         power:  75,
@@ -5060,6 +5073,7 @@ var moves = {
 		
 		},
 		
+		
 	shockwave: {
 		name: "Shockwave",
 		power: 75,
@@ -5070,8 +5084,8 @@ var moves = {
         mr2: "Ranged Defense",
 		},	
 		
-	shockwave: {
-		name: "Shockwave",
+	astroforce: {
+		name: "Astro Force",
 		power: 90,
 		accuracy: "N/A",
 		type: "Martial",
