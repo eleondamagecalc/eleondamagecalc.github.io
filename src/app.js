@@ -3431,7 +3431,6 @@ function adjustHP(loom1, loom2, hp1, hp2, item, ability, status, second = false,
     let sap = { attacker: sapPlant1.checked, defender: sapPlant2.checked };
     let bloodDrain = { attacker: bloodDrain1.checked, defender: bloodDrain2.checked };
     let pestilence = pestilence2.checked;
-    let swarm = swarm2.checked;
     let hellstorm = hellstorm2.checked;
     let softWater = softWater2.checked;
     let disease = diseased2.value;
@@ -3498,10 +3497,7 @@ function adjustHP(loom1, loom2, hp1, hp2, item, ability, status, second = false,
         hazardString += "vine bind damage and ";
     }
 
-    if (swarm) {
-        newHP += Math.floor(hp1 * 1 / 8);
-        hazardString += "swarmdamage and ";
-    }
+    
 
 	
     if (hellstorm) {
