@@ -1,3 +1,29 @@
+<style>
+/* Mobile Fix */
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container {
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+    }
+
+}
+</style
+
+
+
 <head>
     <title>Damage Calculator - Eleon Adventures</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +44,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/nodeca/pako@7abdb13e/dist/pako.min.js"></script>
 
-<body onunload="saveCookie()">
+<body>
     <div class="page-scale">
     <h1 id="title">
         <span class="logo-mark" aria-hidden="true">
