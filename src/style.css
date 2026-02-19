@@ -401,7 +401,8 @@ hr {
 }
 
 .field {
-  height: 615px;
+  height: auto;
+  min-height: 615px;
 }
 
 .bott {
@@ -461,10 +462,10 @@ hr {
 }
 
 .fieldTraps {
-  height: 67%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.2em;
 }
 
 .fieldTraps > div {
@@ -482,8 +483,9 @@ hr {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 0.35em;
+  gap: 0.25em;
   min-width: 0;
+  flex-wrap: wrap;
 }
 
 .fieldTraps .right {
@@ -494,6 +496,10 @@ hr {
 .fieldTraps .radiolbl {
   max-width: 100%;
   margin: 0;
+  padding: 3px 6px;
+  font-size: 0.86em;
+  line-height: 1.2;
+  min-height: 0;
 }
 
 .barb-row {
@@ -533,7 +539,7 @@ hr {
 }
 
 .barb-main {
-  width: 6.6em;
+  width: 5.8em;
   text-align: center;
 }
 
