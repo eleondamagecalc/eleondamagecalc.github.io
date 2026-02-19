@@ -20,9 +20,7 @@
     }
 
 }
-</style
-
-
+</style>
 
 <head>
     <title>Damage Calculator - Eleon Adventures</title>
@@ -1491,8 +1489,7 @@
 <script src="src/builtInSets.js"></script>
 <script>
     function initSelect2() {
-        var dropdownParent = $('.page-scale');
-        var parent = dropdownParent.length ? dropdownParent : $(document.body);
+        var parent = $(document.body);
 
         var initGroup = function ($group) {
             $group.each(function () {
@@ -1509,8 +1506,22 @@
                 if (val !== null) {
                     $el.val(val).trigger('change.select2');
                 }
-                $el.off('select2:select').on('select2:select', function () {
-                    $(this).select2('close');
+
+                var $selection = $el.next('.select2').find('.select2-selection');
+                $selection.off('click.select2fix').on('click.select2fix', function () {
+                    if (!$el.prop('disabled') && !$el.select2('isOpen')) {
+                        $el.select2('open');
+                    }
+                });
+
+                $el.off('select2:open.select2fix').on('select2:open.select2fix', function () {
+                    var results = document.querySelector('.select2-container--open .select2-results__options');
+                    if (!results) {
+                        return;
+                    }
+                    results.addEventListener('wheel', function (event) {
+                        event.stopPropagation();
+                    }, { passive: true });
                 });
             });
         };
