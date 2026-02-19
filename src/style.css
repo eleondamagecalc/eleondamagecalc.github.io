@@ -472,9 +472,9 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  column-gap: 0;
+  column-gap: 0.15em;
   margin: 0;
-  padding: 0;
+  padding: 0.05em 0;
 }
 
 .fieldTraps .left,
@@ -496,10 +496,29 @@ hr {
 .fieldTraps .radiolbl {
   max-width: 100%;
   margin: 0;
-  padding: 3px 6px;
-  font-size: 0.86em;
+  padding: 5px 9px;
+  font-size: 0.92em;
+  line-height: 1.25;
+  min-height: 2.05em;
+}
+
+.fieldTraps .barb-row .radiolbl {
+  min-height: 1.55em;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  line-height: 1.1;
+}
+
+.fieldTraps .barb-row .barb-main {
+  padding: 2px 6px;
+  font-size: 0.8em;
+}
+
+.fieldTraps .shield-row .radiolbl {
+  min-height: 2.1em;
+  font-size: 0.84em !important;
+  padding: 5px 8px;
   line-height: 1.2;
-  min-height: 0;
 }
 
 .barb-row {
@@ -533,13 +552,13 @@ hr {
 }
 
 .barb-count {
-  width: 1.8em;
+  width: 1.9em;
   text-align: center;
   padding: 4px 0;
 }
 
 .barb-main {
-  width: 5.8em;
+  width: 5.2em;
   text-align: center;
 }
 
