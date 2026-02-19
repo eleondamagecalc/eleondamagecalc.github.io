@@ -921,10 +921,9 @@ button:hover,
   }
 
   body {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    font-size: 13px;
-  }
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 
   .page-scale {
     display: inline-block;
